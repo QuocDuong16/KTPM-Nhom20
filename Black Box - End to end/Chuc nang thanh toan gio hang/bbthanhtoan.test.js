@@ -201,10 +201,11 @@ describe('Thanh toan test', () => {
         await page.waitForSelector(".soluong-test");
         await page.click(".soluong-test");
         await page.type(".soluong-test", dataSoLuong);
+        await page.keyboard.press("Enter");
         
 
         soluong = await page.$eval(".soluong-test", el => el.value);
-        expect(soluong).toBe("110");
+        expect(soluong).toBe("10");
         browser.close();
     }, 1000000);
 })
